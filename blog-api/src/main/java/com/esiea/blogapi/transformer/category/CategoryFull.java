@@ -7,12 +7,12 @@ import com.esiea.blogapi.transformer.article.ArticleLight;
 
 public class CategoryFull extends CategoryLight {
 	
-	private List<ArticleLight> products = new ArrayList<>();
+	private List<ArticleLight> articles = new ArrayList<>();
 	
-	public List<ArticleLight> getProducts() {
-		return products;
+	public List<ArticleLight> getArticles() {
+		return articles;
 	}
-	public void setProducts(List<ArticleLight> products) {
-		this.products = products;
+	public void setArticles(List<ArticleLight> articles) {
+		this.articles = articles;
 	}
 }

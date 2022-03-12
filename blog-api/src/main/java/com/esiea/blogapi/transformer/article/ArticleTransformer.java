@@ -36,11 +36,11 @@ public class ArticleTransformer {
 	}
 
 	public List<ArticleFull> transform(Iterable<Article> articles) {
-		List<ArticleFull> productsFull = new ArrayList<>();
+		List<ArticleFull> articlesFull = new ArrayList<>();
 		for (Article article : articles) {
-			productsFull.add(transform(article));
+			articlesFull.add(transform(article));
 		}
-		return productsFull;
+		return articlesFull;
 	}
 	
 	public Article untransform(ArticleFull article) {

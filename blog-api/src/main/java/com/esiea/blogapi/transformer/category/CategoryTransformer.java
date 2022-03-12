@@ -25,7 +25,7 @@ public class CategoryTransformer {
 			articleLight.setDate(article.getDate());
 			articleLight.setCategory(article.getCategory());
 
-			categoryFull.getProducts().add(articleLight);
+			categoryFull.getArticles().add(articleLight);
 		}		
 		return categoryFull;
 	}
