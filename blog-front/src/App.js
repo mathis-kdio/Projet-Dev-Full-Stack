@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-import Articles from './components/articles/Articles';
-import NewArticle from './components/newArticle/NewArticle';
+import Articles from './Components/articles/Articles';
+import NewArticle from './Components/newArticle/NewArticle';
 
 import './App.css';
-import './components/articles/articles.css';
-import "./components/newArticle/newArticle.css";
-import Header from './components/Header';
+import './Components/articles/articles.css';
+import "./Components/newArticle/newArticle.css";
+import Header from './Components/Header';
+
+import Tabs from "./Components/Tabs";
 
 function App() {
   const [allArticles, setAllArticles] = useState([]);
@@ -168,14 +170,32 @@ function App() {
     <div className="App">
       
       <Header />
-
-      <main>
-        <Articles 
-          data={allArticles}
-          deleteArticle={deleteArticle}
-          validateUrl={validateUrl}
-          url={sampleUrl}
-        />
+      <Tabs>
+        <div title="categorie 1">
+            <Articles 
+              data={allArticles}
+              deleteArticle={deleteArticle}
+              validateUrl={validateUrl}
+              url={sampleUrl}
+            />
+        </div>
+        <div title="categorie 2">
+            <Articles 
+              data={allArticles}
+              deleteArticle={deleteArticle}
+              validateUrl={validateUrl}
+              url={sampleUrl}
+            />
+        </div>
+        <div title="categorie 3">
+            <Articles 
+              data={allArticles}
+              deleteArticle={deleteArticle}
+              validateUrl={validateUrl}
+              url={sampleUrl}
+            />
+        </div>
+      </Tabs>
 
         <NewArticle 
           newArticle={newArticle}
@@ -183,7 +203,6 @@ function App() {
           submitArticle={submitArticle}
           inputInvalid={inputInvalid} 
         />
-      </main>
     </div>
   );
 }

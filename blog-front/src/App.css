@@ -30,6 +30,11 @@
   font-weight: normal;
   margin: 1.5rem auto;
 }
+.photo {
+  float: left;
+  width: 100px; /* largeur en pixel de ta photo */
+  height:100px; /* hauteur en pixel de ta photo */
+}
 
 .App-link {
   color: #61dafb;
