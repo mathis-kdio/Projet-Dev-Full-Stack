@@ -16,16 +16,16 @@ export default function NewArticle(props) {
                     onChange={props.handleChange} 
                 />
             </div>
-            
+
             <div className="newArticle__container">
                 <label>Date de l'article : {" "}</label>
-                <input 
+                <input
                     className="newArticle__input"
-                    type="number" 
-                    name="cost" 
-                    value={props.newArticle.cost}
-                    onChange={props.handleChange} 
-                /> 
+                    type="date" 
+                    name="date"
+                    value={props.newArticle.date}
+                    onChange={props.handleChange}>
+                </input>
             </div>
             
             <div className="newArticle__container">
@@ -34,22 +34,22 @@ export default function NewArticle(props) {
                     className="newArticle__input" 
                     type="text"
                     placeholder="Give me your name..." 
-                    name="name"
-                    value={props.newArticle.name}
+                    name="autor"
+                    value={props.newArticle.autor}
                     onChange={props.handleChange} 
                 />
             </div>
 
             <div className="newArticle__container">
                 <label>Catégorie : {" "} </label>
-                <input
-                    className="newArticle__input" 
-                    type="text"
-                    placeholder="Give me the category..." 
-                    name="name"
-                    value={props.newArticle.name}
-                    onChange={props.handleChange} 
-                />
+                <select                     
+                    className="newArticle__input"
+                    value={props.newArticle.categorie}
+                    onChange={props.handleChange}>
+                    <option value="Catégorie 1">catégorie 1</option>
+                    <option value="Catégorie 2">catégorie 2</option>
+                    <option value="Catégorie 3">catégorie 3</option>
+                </select>
             </div>
 
             <textarea
@@ -64,6 +64,6 @@ export default function NewArticle(props) {
 
             <button className="newArticle__submitButton" onClick={props.submitArticle}>New article</button>
         </div>
+        
     )
 }
-
