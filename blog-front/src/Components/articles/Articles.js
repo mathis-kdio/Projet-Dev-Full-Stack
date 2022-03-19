@@ -9,9 +9,9 @@ export default function Articles(props) {
             : 
             'articles__item'}
     >
-        <h3 className='articles__subtitle'>Categorie: {i.category}</h3>
-        <h className='articles__title'><b><u><center>{i.title}</center></u></b></h>
-        <p className='articles__date'><center>{i.date}</center></p>
+        <h1 className='articles__title'><center>{i.title}</center></h1>
+        <h2 className='articles__subtitle'>Categorie: {i.category}</h2>
+        <h3 className='articles__date'><center>{i.date}</center></h3>
         <p className='articles__description'>{i.content} </p> {/* inline style example, style is assigned a JS object */}
         <p className='articles__subtitle'>Auteur: <i>{i.author}</i></p>
         
