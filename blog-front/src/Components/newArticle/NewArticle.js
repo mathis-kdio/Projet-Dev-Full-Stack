@@ -4,9 +4,9 @@ export default function NewArticle(props) {
 
     return (
         <div className="newArticle__form">
-            <h3 className="newArticle__title" >Add a article</h3>
+            <h3 className="newArticle__title" >Ajouter un article</h3>
             <div className="newArticle__container">
-                <label>Nom de l'article : {" "} </label>
+                <label>Titre de l'article : {" "} </label>
                 <input
                     className="newArticle__input" 
                     type="text"
@@ -18,7 +18,7 @@ export default function NewArticle(props) {
             </div>
 
             <div className="newArticle__container">
-                <label>Date de l'article : {" "}</label>
+                <label>Date : {" "}</label>
                 <input
                     className="newArticle__input"
                     type="date" 

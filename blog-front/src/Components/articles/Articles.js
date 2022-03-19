@@ -8,9 +8,10 @@ export default function Articles(props) {
             'articles__item'}
     >
         <img src={props.validateUrl(props.url) ? props.url : ""} alt="Aperçu du produit"/>
-        <h3 className='articles__subtitle'>Produit: {i.name}</h3>
+        <p className='articles__subtitle'>Titre: {i.name}</p>
+        <p className='articles__subtitle'>Auteur: {i.autor}</p>
         <p style={{fontSize: "14px"}} >Description : {i.description} </p> {/* inline style example, style is assigned a JS object */}
-        <p>Prix: {i.cost} </p>
+        <p>Date: {i.cost} </p>
         
         <button 
             className={i.cost === 500 ? 

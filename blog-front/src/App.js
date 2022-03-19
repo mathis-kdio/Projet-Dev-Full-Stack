@@ -170,8 +170,8 @@ function App() {
     <div className="App">
       
       <Header />
-      <Tabs>
-        <div title="categorie 1">
+      <Tabs center>
+        <div title="Economie">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}
@@ -179,7 +179,7 @@ function App() {
               url={sampleUrl}
             />
         </div>
-        <div title="categorie 2">
+        <div title="People">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}
@@ -187,7 +187,7 @@ function App() {
               url={sampleUrl}
             />
         </div>
-        <div title="categorie 3">
+        <div title="Nouvelle technologie">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}
