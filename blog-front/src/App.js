@@ -47,10 +47,6 @@ function App() {
     })
     .catch(e => console.log("error"));
   }, [posting, toDelete]);
-    
-    
-  // check if url uses a secured protocol
-  const sampleUrl = "https://via.placeholder.com/200/e9fff4";
 
   function validateUrl(url) {
     const parsed = new URL(url);
@@ -172,7 +168,6 @@ function App() {
         data={allArticles}
         deleteArticle={deleteArticle}
         validateUrl={validateUrl}
-        url={sampleUrl}
       />
       <NewArticle 
         newArticle={newArticle}
