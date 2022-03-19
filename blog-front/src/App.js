@@ -4,16 +4,20 @@ import Swal from 'sweetalert2';
 import Articles from './Components/articles/Articles';
 import NewArticle from './Components/newArticle/NewArticle';
 
+import Categories from './Components/categories/Categories';
+
 import './App.css';
 import './Components/articles/articles.css';
 import "./Components/newArticle/newArticle.css";
+import './Components/categories/categories.css';
+
 import Header from './Components/Header';
 
 import Tabs from "./Components/Tabs";
 
 function App() {
   const [allArticles, setAllArticles] = useState([]);
-  // const [allCategories, setAllCategories] = useState([]);
+  const [allCategories, setAllCategories] = useState([]);
 
   const [newArticle, setNewArticle] = useState({
     id: 0,
@@ -38,13 +42,13 @@ function App() {
     })
     .catch(e => console.log(e.toString()));
     
-    // fetch('http://localhost:8080/api/private/category')
-    // .then(res => res.json())
-    // .then(data => {
-      //   // const d = JSON.parse(JSON.stringify(data).replace(/</g, '\\u003c'));
-      //   setAllCategories(data);
-      // })
-      // .catch(e => console.log(e.toString()));
+    fetch('http://localhost:8080/api/private/category')
+    .then(res => res.json())
+    .then(data => {
+      //const d = JSON.parse(JSON.stringify(data).replace(/</g, '\\u003c'));
+      setAllCategories(data);
+    })
+         .catch(e => console.log(e.toString()));
   }, [posting, toDelete]);
     
     
@@ -170,8 +174,17 @@ function App() {
     <div className="App">
       
       <Header />
-      <Tabs center>
-        <div title="Economie">
+      <Tabs >
+        <div title="All">
+            <Articles 
+              data={allArticles}
+              categories={allCategories}
+              deleteArticle={deleteArticle}
+              validateUrl={validateUrl}
+              url={sampleUrl}
+            />
+        </div>
+        <div title="politiques">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}
@@ -179,7 +192,7 @@ function App() {
               url={sampleUrl}
             />
         </div>
-        <div title="People">
+        <div title="sports">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}
@@ -187,7 +200,7 @@ function App() {
               url={sampleUrl}
             />
         </div>
-        <div title="Nouvelle technologie">
+        <div title="cultures">
             <Articles 
               data={allArticles}
               deleteArticle={deleteArticle}

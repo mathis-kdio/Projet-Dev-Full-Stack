@@ -7,11 +7,10 @@ export default function Articles(props) {
             : 
             'articles__item'}
     >
-        <img src={props.validateUrl(props.url) ? props.url : ""} alt="Aperçu du produit"/>
-        <p className='articles__subtitle'>Titre: {i.name}</p>
-        <p className='articles__subtitle'>Auteur: {i.autor}</p>
-        <p style={{fontSize: "14px"}} >Description : {i.description} </p> {/* inline style example, style is assigned a JS object */}
-        <p>Date: {i.cost} </p>
+        <h3 className='articles__subtitle'>Categorie: {i.category}</h3>
+        <p className='articles__subtitle'>Auteur: {i.author}</p>
+        <p style={{fontSize: "14px"}} >Description : {i.content} </p> {/* inline style example, style is assigned a JS object */}
+        <p>Date: {i.date} </p>
         
         <button 
             className={i.cost === 500 ? 

@@ -5,14 +5,15 @@ export default function NewArticle(props) {
     return (
         <div className="newArticle__form">
             <h3 className="newArticle__title" >Ajouter un article</h3>
+            
             <div className="newArticle__container">
-                <label>Titre de l'article : {" "} </label>
+                <label>Auteur : {" "} </label>
                 <input
                     className="newArticle__input" 
                     type="text"
-                    placeholder="Give me a name..." 
-                    name="name"
-                    value={props.newArticle.name}
+                    placeholder="Give me your name..." 
+                    name="autor"
+                    value={props.newArticle.autor}
                     onChange={props.handleChange} 
                 />
             </div>
@@ -26,18 +27,6 @@ export default function NewArticle(props) {
                     value={props.newArticle.date}
                     onChange={props.handleChange}>
                 </input>
-            </div>
-            
-            <div className="newArticle__container">
-                <label>Auteur : {" "} </label>
-                <input
-                    className="newArticle__input" 
-                    type="text"
-                    placeholder="Give me your name..." 
-                    name="autor"
-                    value={props.newArticle.autor}
-                    onChange={props.handleChange} 
-                />
             </div>
 
             <div className="newArticle__container">
