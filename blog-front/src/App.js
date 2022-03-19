@@ -172,7 +172,7 @@ function App() {
   
   return (
     <div className="App">
-      
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
       <Header />
       <Tabs >
         <div title="All">

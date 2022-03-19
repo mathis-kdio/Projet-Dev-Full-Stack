@@ -17,7 +17,7 @@ export const Tab = ({ title, onClick, active = false }) => {
         li.tab-item {
           list-style-type: none;
           padding: 1rem 2rem;
-          background-color: yellow;
+          background-color: #99aab5;
           font-weight: bold;
           text-transform: uppercase;
           letter-spacing: 0.1rem;
@@ -27,7 +27,7 @@ export const Tab = ({ title, onClick, active = false }) => {
 
         li.tab-item:hover,
         li.tab-item.active {
-          background-color: #DFAF2C;
+          background-color: #7289da;
         }
       `}</style>
     </>

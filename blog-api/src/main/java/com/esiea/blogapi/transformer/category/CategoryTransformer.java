@@ -20,6 +20,7 @@ public class CategoryTransformer {
 		for(Article article : category.getArticles()) {
 			ArticleLight articleLight = new ArticleLight();
 			articleLight.setId(article.getId());
+			articleLight.setTitle(article.getTitle());
 			articleLight.setAuthor(article.getAuthor());
 			articleLight.setContent(article.getContent());
 			articleLight.setDate(article.getDate());

@@ -2,22 +2,32 @@
     max-width: 1000px;
     margin: 2rem auto;
     padding: 0 1rem;
+    background-color: #99aab5 ;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px black;
 }
 
 .articles__title {
     text-transform: uppercase;
 }
+.articles__date {
+    color: #717b8e;
+    font-size: 15px;
+}
 
 .articles__container {
+    background-color: #7289da ;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .articles__item {
-    width: 230px;
+    background-color: #ffffff ;
+    width: 5000px;
     height: auto;
-    border: 2px solid #00ff80;
     border-radius: 5px;
     padding: 1rem;
     margin: 1rem;
@@ -25,10 +35,15 @@
 }
 
 .articles__item--500 {
-    border-color: #00FFFF;
-    background-color: #00FFFF;
+    border-color: #7289da;
+    background-color: #7289da;
 }
 
+.articles__description {
+    font-size: 16px;
+    font-weight: normal;
+    text-indent: 20px;
+}
 .articles__subtitle {
     font-size: 16px;
     font-weight: normal;
@@ -39,12 +54,12 @@
     height: 30px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(144deg, rgb(0,255,128), rgb(0,255,255));
-    box-shadow: 1px 2px 3px #c3c3c3;
+    background: red;
+    box-shadow: 1px 2px 3px #240d0d;
 }
 
 .articles__deleteButton--500 {
-    background: rgb(0,255,128);
+    background: red;
 }
 
 .articles__deleteButton:hover {
@@ -63,7 +78,7 @@
 @media screen and (max-width: 900px) {
     
     .articles__item--500 {
-        border-color: #FF8000;
-        background-color: #FF8000;
+        border-color: #7289da;
+        background-color: #7289da;
     }
 }

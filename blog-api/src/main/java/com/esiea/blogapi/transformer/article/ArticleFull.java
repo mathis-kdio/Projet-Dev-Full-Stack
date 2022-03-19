@@ -15,6 +15,4 @@ public class ArticleFull extends ArticleLight {
 	public void setCategories(List<CategoryLight> categories) {
 		this.categories = categories;
 	}
-	
-	
 }

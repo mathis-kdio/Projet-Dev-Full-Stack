@@ -7,13 +7,25 @@ export default function NewArticle(props) {
             <h3 className="newArticle__title" >Ajouter un article</h3>
             
             <div className="newArticle__container">
+                <label>Titre : {" "} </label>
+                <input
+                    className="newArticle__input" 
+                    type="text"
+                    placeholder="Titre de l'article." 
+                    name="title"
+                    value={props.newArticle.autor}
+                    onChange={props.handleChange} 
+                />
+            </div>
+
+            <div className="newArticle__container">
                 <label>Auteur : {" "} </label>
                 <input
                     className="newArticle__input" 
                     type="text"
-                    placeholder="Give me your name..." 
-                    name="autor"
-                    value={props.newArticle.autor}
+                    placeholder="Auteur de l'arcticle." 
+                    name="author"
+                    value={props.newArticle.author}
                     onChange={props.handleChange} 
                 />
             </div>
@@ -33,7 +45,7 @@ export default function NewArticle(props) {
                 <label>Catégorie : {" "} </label>
                 <select                     
                     className="newArticle__input"
-                    value={props.newArticle.categorie}
+                    value={props.newArticle.category}
                     onChange={props.handleChange}>
                     <option value="Catégorie 1">catégorie 1</option>
                     <option value="Catégorie 2">catégorie 2</option>
@@ -43,9 +55,9 @@ export default function NewArticle(props) {
 
             <textarea
                 className="newArticle__description"
-                placeholder="Description du produit" 
-                name="description"
-                value={props.newArticle.description}
+                placeholder="Contenue de l'article." 
+                name="content"
+                value={props.newArticle.content}
                 onChange={props.handleChange} 
             />
 

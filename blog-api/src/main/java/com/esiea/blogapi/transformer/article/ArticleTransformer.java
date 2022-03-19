@@ -21,6 +21,7 @@ public class ArticleTransformer {
 		ArticleFull articleFull = new ArticleFull();
 		articleFull.setId(article.getId());
 		articleFull.setCategory(article.getCategory());
+		articleFull.setTitle(article.getTitle());
 		articleFull.setAuthor(article.getAuthor());
 		articleFull.setContent(article.getContent());
 		articleFull.setDate(article.getDate());
@@ -47,6 +48,7 @@ public class ArticleTransformer {
 		Article p = new Article();
 		p.setId(article.getId());
 		p.setCategory(article.getCategory());
+		p.setTitle(article.getTitle());
 		p.setAuthor(article.getAuthor());
 		p.setDate(article.getDate());
 		p.setContent(article.getContent());

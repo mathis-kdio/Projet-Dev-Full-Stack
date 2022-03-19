@@ -1,6 +1,8 @@
 export default function Articles(props) {
     
-    const articlesElements = props.data.map(i => <div 
+    const articlesElements = props.data.map(i => 
+        
+    <div 
         key={i.id} 
         className={i.cost === 500 ? 
             'articles__item articles__item--500' 
@@ -8,9 +10,11 @@ export default function Articles(props) {
             'articles__item'}
     >
         <h3 className='articles__subtitle'>Categorie: {i.category}</h3>
-        <p className='articles__subtitle'>Auteur: {i.author}</p>
-        <p style={{fontSize: "14px"}} >Description : {i.content} </p> {/* inline style example, style is assigned a JS object */}
-        <p>Date: {i.date} </p>
+        <h className='articles__title'><b><u><center>{i.title}</center></u></b></h>
+        <p className='articles__date'><center>{i.date}</center></p>
+        <p className='articles__description'>{i.content} </p> {/* inline style example, style is assigned a JS object */}
+        <p className='articles__subtitle'>Auteur: <i>{i.author}</i></p>
+        
         
         <button 
             className={i.cost === 500 ? 

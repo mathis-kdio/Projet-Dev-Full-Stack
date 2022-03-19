@@ -81,6 +81,9 @@ public class ArticleController {
 			if (article.getCategory() != null && !article.getCategory().equals(existingArticle.getCategory())) {
 				existingArticle.setCategory(article.getCategory());
 			}
+			if (article.getTitle() != null && !article.getTitle().equals(existingArticle.getTitle())) {
+				existingArticle.setTitle(article.getTitle());
+			}
 			if (article.getAuthor() != null && !article.getAuthor().equals(existingArticle.getAuthor())) {
 				existingArticle.setAuthor(article.getAuthor());
 			}

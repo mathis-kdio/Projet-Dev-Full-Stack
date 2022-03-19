@@ -18,6 +18,7 @@ public class Article {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String category;
+	private String title;
 	private String author;
 	private String date;
 	private String content;
@@ -42,7 +43,15 @@ public class Article {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String getAuthor() {
 		return author;
 	}
