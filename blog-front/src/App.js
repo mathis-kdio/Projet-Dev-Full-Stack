@@ -13,8 +13,6 @@ import './Components/categories/categories.css';
 
 import Header from './Components/Header';
 
-import Tabs from "./Components/Tabs";
-
 function App() {
   const [allArticles, setAllArticles] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
@@ -41,14 +39,13 @@ function App() {
       setAllArticles(data);
     })
     .catch(e => console.log(e.toString()));
-    
+
     fetch('http://localhost:8080/api/private/category')
     .then(res => res.json())
     .then(data => {
-      //const d = JSON.parse(JSON.stringify(data).replace(/</g, '\\u003c'));
       setAllCategories(data);
     })
-         .catch(e => console.log(e.toString()));
+    .catch(e => console.log("error"));
   }, [posting, toDelete]);
     
     
@@ -123,7 +120,7 @@ function App() {
       })
       .catch(e => console.log(e.toString()));
     }
-  }, [posting]);
+  }, [posting, newArticle]);
 
 
   // triggers deletion and send DELETE request
@@ -164,58 +161,25 @@ function App() {
       .catch(e => console.log(e.toString()));
     }
   }, [toDelete])
-
-  // console.log(newArticle);
-  // console.log("infinite loop here");
-  // console.log(allCategories);
-  // console.log(toDelete);
   
   return (
-    <div className="App">
-      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-      <Header />
-      <Tabs >
-        <div title="All">
-            <Articles 
-              data={allArticles}
-              categories={allCategories}
-              deleteArticle={deleteArticle}
-              validateUrl={validateUrl}
-              url={sampleUrl}
-            />
-        </div>
-        <div title="politiques">
-            <Articles 
-              data={allArticles}
-              deleteArticle={deleteArticle}
-              validateUrl={validateUrl}
-              url={sampleUrl}
-            />
-        </div>
-        <div title="sports">
-            <Articles 
-              data={allArticles}
-              deleteArticle={deleteArticle}
-              validateUrl={validateUrl}
-              url={sampleUrl}
-            />
-        </div>
-        <div title="cultures">
-            <Articles 
-              data={allArticles}
-              deleteArticle={deleteArticle}
-              validateUrl={validateUrl}
-              url={sampleUrl}
-            />
-        </div>
-      </Tabs>
-
-        <NewArticle 
-          newArticle={newArticle}
-          handleChange={handleChange}
-          submitArticle={submitArticle}
-          inputInvalid={inputInvalid} 
-        />
+    <div className="App">  
+      <Header/>
+      <Categories 
+        data={allCategories}
+      />
+      <Articles 
+        data={allArticles}
+        deleteArticle={deleteArticle}
+        validateUrl={validateUrl}
+        url={sampleUrl}
+      />
+      <NewArticle 
+        newArticle={newArticle}
+        handleChange={handleChange}
+        submitArticle={submitArticle}
+        inputInvalid={inputInvalid} 
+      />
     </div>
   );
 }
