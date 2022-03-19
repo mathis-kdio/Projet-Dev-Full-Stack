@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS articles;
 DROP TABLE IF EXISTS categories;
- 
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE articles (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   category VARCHAR(250) NOT NULL,
@@ -34,4 +35,15 @@ INSERT INTO category_article (category_id, article_id) VALUES
 	(1,1),
 	(4,2),
 	(2,3);
-	
+
+CREATE TABLE users (
+	id INT AUTO_INCREMENT  PRIMARY KEY,
+	username VARCHAR(255),
+	password VARCHAR(255)
+);
+
+INSERT INTO users (username, password) VALUES
+	('user',
+	'$2y$10$Nst16RHUD/YnnSsR0kv8vuZTr1x.RMFj02Zufn6mk6Y8sP0FhNGO2'),
+	('admin',
+	'$2y$10$c46xKy3mwFtIo/mR4ki2juw/bw59/ACJR3foF/lzSzWt.tY3DHd6G'); 
