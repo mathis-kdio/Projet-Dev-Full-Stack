@@ -70,6 +70,7 @@ export default function Tabs({ children }) {
         .tab-list {
           padding: 0;
           display: flex;
+          justify-content: center;
         }
 
         .tab-content {

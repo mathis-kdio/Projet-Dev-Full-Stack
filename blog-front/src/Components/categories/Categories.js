@@ -19,7 +19,7 @@ export default function Categories(props) {
   }
   else {
     return(
-      <h3>Pas de catégories</h3>
+      <h3>Pas de catégories à afficher</h3>
     )
   }
 }
