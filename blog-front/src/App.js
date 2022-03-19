@@ -124,12 +124,13 @@ function App() {
     event.stopPropagation();
 
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Etes vous sûr ?',
+      text: "Il ne sera pas possible d'annuler la suppression !",
       icon: 'warning',
       showCancelButton: true,
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Oui je veux supprimer !',
+      cancelButtonText: 'Annuler'
     })
     .then((result) => {
       if (result.isConfirmed) {

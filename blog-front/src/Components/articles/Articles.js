@@ -22,7 +22,7 @@ export default function Articles(props) {
                 : 
                 "articles__deleteButton"} 
             onClick={event => props.deleteArticle(event, i.id)} /* we need a callback to pass a parameter to our event handler */
-        >Delete</button>
+        >Supprimer</button>
     </div>)
 
     return (
