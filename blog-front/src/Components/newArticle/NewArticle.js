@@ -49,7 +49,7 @@ export default function NewArticle(props) {
                     onChange={props.handleChange}>
                     {props.data.map(i => {
                         return (
-                            <option value={i.categoryId} key={i.categoryId}>{i.name}</option>
+                            <option value={i.name} key={i.categoryId}>{i.name}</option>
                         )
                     })}
                 </select>

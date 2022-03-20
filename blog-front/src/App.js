@@ -22,7 +22,8 @@ function App() {
     title: "",
     author: "",
     date: "",
-    category: "",
+    category: "politiques",
+    categories: [],
     content: ""
   });
 
@@ -102,6 +103,7 @@ function App() {
 
   useEffect(() =>{
     if (posting) {
+      newArticle.categories.push({name: newArticle.category, categoryId: allCategories.find(el => el.name === newArticle.category).categoryId})
       console.log("newarticle useeffect")
       console.log(newArticle)
       fetch('http://localhost:8080/api/private/article', {
@@ -119,7 +121,7 @@ function App() {
       })
       .catch(e => console.log(e.toString()));
     }
-  }, [posting, newArticle]);
+  }, [posting, newArticle, allCategories]);
 
 
   // triggers deletion and send DELETE request
