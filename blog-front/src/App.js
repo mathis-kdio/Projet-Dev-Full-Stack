@@ -19,10 +19,11 @@ function App() {
 
   const [newArticle, setNewArticle] = useState({
     id: 0,
-    name: "",
-    description: "",
-    cost: 0,
-    categories: []
+    title: "",
+    author: "",
+    date: "",
+    category: "",
+    content: ""
   });
 
   const [toDelete, setToDelete] = useState({deleting: false});
@@ -101,7 +102,8 @@ function App() {
 
   useEffect(() =>{
     if (posting) {
-      
+      console.log("newarticle useeffect")
+      console.log(newArticle)
       fetch('http://localhost:8080/api/private/article', {
           method: "POST",
           headers: {
@@ -193,7 +195,8 @@ function App() {
         deleteArticle={deleteArticle}
         validateUrl={validateUrl}
       />
-      <NewArticle 
+      <NewArticle
+        data={allCategories}
         newArticle={newArticle}
         handleChange={handleChange}
         submitArticle={submitArticle}

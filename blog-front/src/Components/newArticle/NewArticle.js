@@ -1,7 +1,6 @@
 export default function NewArticle(props) {
 
     // the inputs are controled by the state in App.js
-
     return (
         <div className="newArticle__form">
             <h3 className="newArticle__title" >Ajouter un article</h3>
@@ -45,11 +44,14 @@ export default function NewArticle(props) {
                 <label>Catégorie : {" "} </label>
                 <select                     
                     className="newArticle__input"
+                    name="category"
                     value={props.newArticle.category}
                     onChange={props.handleChange}>
-                    <option value="Catégorie 1">catégorie 1</option>
-                    <option value="Catégorie 2">catégorie 2</option>
-                    <option value="Catégorie 3">catégorie 3</option>
+                    {props.data.map(i => {
+                        return (
+                            <option value={i.categoryId} key={i.categoryId}>{i.name}</option>
+                        )
+                    })}
                 </select>
             </div>
 
