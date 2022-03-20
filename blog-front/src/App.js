@@ -182,7 +182,7 @@ function App() {
   })
 
   return (
-    <div className="App">  
+    <div>  
       <Header/>
       <Categories 
         data={allCategories}

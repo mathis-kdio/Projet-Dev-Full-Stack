@@ -63,7 +63,7 @@ export default function NewArticle(props) {
 
             {props.inputInvalid && <p>{props.inputInvalid}</p>}
 
-            <button className="newArticle__submitButton" onClick={props.submitArticle}>New article</button>
+            <button className="newArticle__submitButton" onClick={props.submitArticle}>Nouvel article</button>
         </div>
         
     )

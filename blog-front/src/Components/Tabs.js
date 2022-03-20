@@ -77,6 +77,7 @@ export default function Tabs({ children }) {
 
         .tab-content {
           padding: 0 1rem;
+          text-align: center;
         }
 
         .tab-content p {

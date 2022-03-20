@@ -9,6 +9,7 @@
 
 .articles__title {
     text-transform: uppercase;
+    text-align: center;
 }
 .articles__date {
     color: #717b8e;
@@ -43,10 +44,12 @@
     font-size: 16px;
     font-weight: normal;
     text-indent: 20px;
+    text-align: justify;
 }
 .articles__subtitle {
     font-size: 16px;
     font-weight: normal;
+    text-align: center;
 }
 
 .articles__deleteButton {
