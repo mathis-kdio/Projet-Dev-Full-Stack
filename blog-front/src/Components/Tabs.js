@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const Tab = ({ title, onClick, active = false }) => {
+export const Tab = ({ title, onClick, active = false, showCategorie, categorieId }) => {
   const onClickTab = e => {
     e.preventDefault(0);
     onClick(title);
+    showCategorie(e, categorieId)
   };
 
   return (
@@ -38,7 +39,6 @@ export default function Tabs({ children }) {
   const [activeTab, setActiveTab] = useState(children[0].props.title);
 
   const onClickTabItem = tab => setActiveTab(tab);
-
   return (
     <>
       <div className="tabs">
@@ -52,6 +52,8 @@ export default function Tabs({ children }) {
                 title={title}
                 onClick={onClickTabItem}
                 active={title === activeTab ? true : false}
+                showCategorie={tab.props.onClick}
+                categorieId={tab.key}
               />
             );
           })}

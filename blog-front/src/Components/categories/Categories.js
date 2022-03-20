@@ -5,6 +5,7 @@ export default function Categories(props) {
     <div
       key={i.categoryId}
       title={i.name}
+      onClick={event => props.showCategorie(event, i.categoryId)}
     >
       <h3>{i.name}</h3>
     </div>

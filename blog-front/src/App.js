@@ -29,7 +29,8 @@ function App() {
   const [posting, setPosting] = useState(false);
   const [inputInvalid, setInputInvalid] = useState(false);
 
-  
+  const [categorietoShow, setArticlesOfCategoriesToShow] = useState({show: false, categorieId: 0});
+
   
   // fetch articles and categories data from API
   useEffect(() => {
@@ -159,11 +160,28 @@ function App() {
     }
   }, [toDelete])
   
+  function showCategorie(event, categorieId) {
+    setArticlesOfCategoriesToShow({show: true, categorieId: categorieId});
+  }
+
+  useEffect(() => {
+    if (categorietoShow.show) {
+      fetch(`http://localhost:8080/api/private/article`)
+      .then(res => res.json())
+      .then(data => {
+        setAllArticles(data.filter(article => article.categories.some(category => category.categoryId === categorietoShow.categorieId)))
+        setArticlesOfCategoriesToShow({show: false})
+      })
+      .catch(e => console.log(e.toString()));
+    }
+  })
+
   return (
     <div className="App">  
       <Header/>
       <Categories 
         data={allCategories}
+        showCategorie={showCategorie}
       />
       <Articles 
         data={allArticles}
