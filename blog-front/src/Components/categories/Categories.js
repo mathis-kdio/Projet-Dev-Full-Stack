@@ -10,6 +10,15 @@ export default function Categories(props) {
       <h3>{i.name}</h3>
     </div>
   )
+  categoriesElements.unshift(
+    <div
+      key="0"
+      title="Tous les articles"
+      onClick={event => props.showCategorie(event, 0)}
+    >
+      <h3>Tous les articles</h3>
+    </div>
+  )
   
   if (categoriesElements.length > 0) {
     return (

@@ -169,7 +169,12 @@ function App() {
       fetch(`http://localhost:8080/api/private/article`)
       .then(res => res.json())
       .then(data => {
-        setAllArticles(data.filter(article => article.categories.some(category => category.categoryId === categorietoShow.categorieId)))
+        if (categorietoShow.categorieId !== 0) {
+          setAllArticles(data.filter(article => article.categories.some(category => category.categoryId === categorietoShow.categorieId)))
+        }
+        else {
+          setAllArticles(data);
+        }
         setArticlesOfCategoriesToShow({show: false})
       })
       .catch(e => console.log(e.toString()));
